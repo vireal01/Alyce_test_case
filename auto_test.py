@@ -237,11 +237,8 @@ class Apples(unittest.TestCase):
         time.sleep(0.5)
         driver.find_element_by_xpath \
         ('/html/body/div[1]/div[2]/div[2]/div[1]/div/section[1]/ul/li[3]/div[2]/ul/li[2]')
-<<<<<<< HEAD
         time.sleep(5)
-=======
 
->>>>>>> 9ef1a45c5a275c95b6059ba7da5b62c1aed2911b
         # Jonathan is trying to take an apple from the empty basket
         jonathan_grab_apple = driver.find_element_by_xpath \
             ('/html/body/div[1]/div[2]/div[2]/div[1]/div/section[1]/ul/li[1]/div[1]/span/button')
