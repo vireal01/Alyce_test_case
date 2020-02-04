@@ -175,6 +175,77 @@ class Apples(unittest.TestCase):
         driver.find_element_by_xpath \
             ('/html/body/div[1]/div[2]/div[1]/div')
 
+    def test_four(self):
+        driver = self.driver
+
+        # Click on "Free Apples"
+        free_apples = driver.find_element_by_xpath('/html/body/div[1]/div[2]/div[2]/div[1]/div/section[2]/a')
+        ActionChains(driver).click(free_apples).perform()
+        time.sleep(5.5)
+
+        # Jonathan grabs Apple1
+        jonathan_grab_apple = driver.find_element_by_xpath \
+        ('/html/body/div[1]/div[2]/div[2]/div[1]/div/section[1]/ul/li[1]/div[1]/span/button')
+        # click on "Grab apple"
+        ActionChains(driver).click(jonathan_grab_apple).perform()
+        # check that Jonathan has grabbed the apple
+        time.sleep(0.5)
+        driver.find_element_by_xpath \
+            ('/html/body/div[1]/div[2]/div[2]/div[1]/div/section[1]/ul/li[1]/div[2]/ul/li')
+        # Wait 5 seconds
+        time.sleep(5)
+
+        # Jonathan grabs Apple3
+        jonathan_grab_apple = driver.find_element_by_xpath \
+            ('/html/body/div[1]/div[2]/div[2]/div[1]/div/section[1]/ul/li[1]/div[1]/span/button')
+        # click on "Grab apple"
+        ActionChains(driver).click(jonathan_grab_apple).perform()
+        time.sleep(0.5)
+        # check that Jonathan has grabbed the apple
+        driver.find_element_by_xpath \
+            ('/html/body/div[1]/div[2]/div[2]/div[1]/div/section[1]/ul/li[1]/div[2]/ul/li[2]')
+        # Wait 5 seconds
+        time.sleep(5)
+
+        # Jonathan grabs Apple5
+        jonathan_grab_apple = driver.find_element_by_xpath \
+            ('/html/body/div[1]/div[2]/div[2]/div[1]/div/section[1]/ul/li[1]/div[1]/span/button')
+        # click on "Grab apple"
+        ActionChains(driver).click(jonathan_grab_apple).perform()
+        # check that Jonathan has grabbed the apple
+        time.sleep(0.5)
+        driver.find_element_by_xpath \
+            ('/html/body/div[1]/div[2]/div[2]/div[1]/div/section[1]/ul/li[1]/div[2]/ul/li[3]')
+        # Wait 5 seconds
+        time.sleep(5)
+
+        # Julia grabs Apple2
+        julia_grab_apple = driver.find_element_by_xpath \
+        ('/html/body/div[1]/div[2]/div[2]/div[1]/div/section[1]/ul/li[3]/div[1]/span/button')
+        ActionChains(driver).click(julia_grab_apple).perform()
+        time.sleep(0.5)
+        driver.find_element_by_xpath \
+        ('/html/body/div[1]/div[2]/div[2]/div[1]/div/section[1]/ul/li[3]/div[2]/ul/li')
+        time.sleep(5)
+
+        # Julia grabs Apple4
+        julia_grab_apple = driver.find_element_by_xpath \
+        ('/html/body/div[1]/div[2]/div[2]/div[1]/div/section[1]/ul/li[3]/div[1]/span/button')
+        ActionChains(driver).click(julia_grab_apple).perform()
+        time.sleep(0.5)
+        driver.find_element_by_xpath \
+        ('/html/body/div[1]/div[2]/div[2]/div[1]/div/section[1]/ul/li[3]/div[2]/ul/li[2]')
+
+        # Jonathan is trying to take an apple from an empty basket
+        jonathan_grab_apple = driver.find_element_by_xpath \
+            ('/html/body/div[1]/div[2]/div[2]/div[1]/div/section[1]/ul/li[1]/div[1]/span/button')
+        # click on "Grab apple"
+        ActionChains(driver).click(jonathan_grab_apple).perform()
+        # check that the pop-up message appears
+        time.sleep(0.1)
+        driver.find_element_by_xpath \
+            ('/html/body/div[1]/div[2]/div[1]/div/div')
+
 
 if __name__ == '__main__':
     unittest.main()
