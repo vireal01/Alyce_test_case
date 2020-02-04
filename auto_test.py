@@ -175,7 +175,7 @@ class Apples(unittest.TestCase):
         driver.find_element_by_xpath \
             ('/html/body/div[1]/div[2]/div[1]/div')
 
-    '''Test Three:
+    '''Test Four:
         Check the pop-up message, if you're trying to take an apple from the empty basket'''
     def test_four(self):
         driver = self.driver
